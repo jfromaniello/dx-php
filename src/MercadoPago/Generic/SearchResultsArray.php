@@ -30,8 +30,8 @@
 
             $this->_filters['offset'] = $new_offset; 
             
-            $result = $this->_class::search($this->_filters);
-
+            //$result = $this->_class::search($this->_filters);
+            $result = \call_user_func(array($this->_class, 'search'), $this->_filters);
 
 
             echo "\nlimit" . $result->limit ;
